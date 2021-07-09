@@ -20,7 +20,10 @@ function startSearch(e) {
 
 async function fetchLocations(searchTerm) {
   try {
-    const response = await fetch(`http://localhost:8000?search=${searchTerm}`);
+    //const response = await fetch(`http://localhost:8000?search=${searchTerm}`);
+    const response = await fetch(
+      `/.netlify/functions/locations?search=${searchTerm}`
+    );
     console.log(response);
 
     if (!response.ok) {
